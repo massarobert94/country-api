@@ -77,7 +77,7 @@ const getCurrentData = async () => {
                 const weather = document.getElementById('weather');
                 const weatherIcon = document.getElementById('weatherIcon');
 
-                weather.innerHTML = Math.round(weatherData.current.temp); + '°';
+                weather.innerHTML = Math.round(weatherData.current.temp) + '° C';
                 weatherIcon.src = `https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`;
                 })
             }
