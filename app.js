@@ -100,7 +100,7 @@ const getCurrentData = async () => {
 
 
 
-            // Languages array --- NEED TO CLEAR ARRAY BEFORE NEW SEARCH
+            // Languages array
 
             const langList = document.getElementById('languagesList');
             langList.innerHTML = "";
@@ -112,7 +112,7 @@ const getCurrentData = async () => {
                 langList.appendChild(li);
             }
 
-            // Borders array - similar to one above, will likely need to reset before executing another search
+            // Borders array
 
             const borderList = document.getElementById('borderList');
             borderList.innerHTML = "";
