@@ -1,13 +1,10 @@
 
 
-// FormData API
+// Changed from FormData API to handling selected values
 
-function handleSubmit(event){
-    event.preventDefault();
-
-    
-    const data = new FormData(event.target);
-    const country = data.get('countryInput');
+function handleSubmit(){
+    let select = document.getElementById('countryInput');
+    let country = select.options[select.selectedIndex].value;
     
     console.log(country);
 
@@ -83,6 +80,22 @@ const getCurrentData = async () => {
             }
             getWeatherData();
 
+            // Embed Google Maps using country variable and Maps Embed API
+
+            let mapsDiv = document.getElementById('mapsDiv');
+            const mapsApiKey = config.MAPS_KEY;
+            let mapsHtml = `<iframe
+            width="502"
+            height="450"
+            style="border:0; border-radius:10px"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps/embed/v1/place?key=${mapsApiKey}
+            &q=${country}">
+            </iframe>`
+            mapsDiv.innerHTML = mapsHtml;
+            // console.log(mapsHtml);
+
             // console.log(weatherData);
 
 
@@ -90,6 +103,7 @@ const getCurrentData = async () => {
             // Languages array --- NEED TO CLEAR ARRAY BEFORE NEW SEARCH
 
             const langList = document.getElementById('languagesList');
+            langList.innerHTML = "";
             const languagesArray = res[0].languages;
             // console.log(languagesArray);
             for(const [key, value] of Object.entries(languagesArray)) {
@@ -101,6 +115,7 @@ const getCurrentData = async () => {
             // Borders array - similar to one above, will likely need to reset before executing another search
 
             const borderList = document.getElementById('borderList');
+            borderList.innerHTML = "";
             const bordersArray = res[0].borders;
             for(const [key, value] of Object.entries(bordersArray)) {
                 let li = document.createElement('li');
@@ -112,8 +127,9 @@ const getCurrentData = async () => {
 
 getCurrentData();
 }
-// Event listener for button submission
+// Event listener to grab data for U.S.A. when page loads. Second Event Listener grabs data when the select field is changed.
 
-countryForm.addEventListener('submit', handleSubmit);
+window.addEventListener('load', handleSubmit);
+countryInput.addEventListener('change', handleSubmit);
 
 

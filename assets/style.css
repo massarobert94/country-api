@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Dreamland';
+    src:url(dreamlan.ttf)
+}
+
+*{
+    box-sizing: border-box;
+    background-color: #000000;
+    color: #ffffff;
+}
+h1, h2{
+    font-family: 'Dreamland';
+}
+
+.card-body select {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#coatOfArms, #flagImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+#coat-container, #flag-container{
+  height: 252px;
+}
+
+main{
+    width: 502px;
+    margin: 30px auto;
+    padding: 0;
+}
+
+#capital, #weatherIcon, #weather{
+    background-color: transparent;
+}
+
+#weatherContainer {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba( 80, 227, 194, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#weather, #capital, #selectDiv, #card-title{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#weatherIcon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#countryInput{
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-size: medium;
+    margin-top: 4rem;
+}
