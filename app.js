@@ -55,7 +55,7 @@ const getCurrentData = async () => {
             
             // Weather functions: would like to import/export or use modules at some point
 
-            const apiKey = config.WEATHER_KEY;
+            const apiKey = 'c680d0ec673f56da94ef0342e8a5212a';
             // const units = (putImperialHere.checked == true) ? 'imperial' : 'metric';
             const units = 'metric';
             const weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=${units}&exclude=minutely,hourly&appid=${apiKey}`;
@@ -83,9 +83,9 @@ const getCurrentData = async () => {
             // Embed Google Maps using country variable and Maps Embed API
 
             let mapsDiv = document.getElementById('mapsDiv');
-            const mapsApiKey = config.MAPS_KEY;
+            const mapsApiKey = 'AIzaSyBGKYqA2ZQvdIgS8IDcULWpfkAJxXloNIo';
             let mapsHtml = `<iframe
-            width="502"
+            width="100%"
             height="450"
             style="border:0; border-radius:10px"
             loading="lazy"
